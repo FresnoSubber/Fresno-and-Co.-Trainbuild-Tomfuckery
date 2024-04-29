@@ -1,0 +1,101 @@
+@name ptgamma/engines/MWM_RHS518
+#ENGINE CONFIG
+ENG_Version = "2.0.68"
+#For use in the DB Kof III. Probably Enough Truck-Like to use for Gensets.
+EngineType = "MWM RHS518" #What is the name of the Prime Mover?
+
+Startup_Hi = "zexciv_stuff/engines/kof_rhs518/startup.wav" #Startup Sound to put the engine in High (Normal) Idle.
+Startup_Lo = "" #Startup Sound to put the engine in Low Idle.
+Startup_Mode = 1 #0 for Low, 1 for High
+
+Shutdown_Hi = "zexciv_stuff/engines/kof_rhs518/shutdown.wav" #Shutdown Sound from High Idle.
+Shutdown_Lo = "" #Shutdown Sound from Low Idle.
+Shutdown_Mode = 1 #0 for Low, 1 for High, 2 for Both as the situation demands it
+
+FuelSaverMode = 0 #If set to 1, the locomotive will go into and out of Low Idle as the reverser is moved in and out of Neutral
+FuelSaverDelay = 0 #Time, in seconds, for engine to fall into Low Idle, if used.
+
+TransitionToLow = "" #Transition sound for High to Low idle, if used.
+TransitionToHigh = "" #Transition sound for Low to High idle, if used.
+Idle_Low = "" #Sound for Low Idle, if used.
+
+
+NumEngineNotches = 6 #Number of Engine Notches, not counting idle.
+
+Notches = array(
+    "zexciv_stuff/engines/kof_rhs518/idle.wav", #Idle
+    "zexciv_stuff/engines/kof_rhs518/notch1.wav", #Notch 1
+    "zexciv_stuff/engines/kof_rhs518/notch2.wav", #Notch 2
+    "zexciv_stuff/engines/kof_rhs518/notch3.wav", #Notch 3
+    "zexciv_stuff/engines/kof_rhs518/notch4.wav", #And so On
+    "zexciv_stuff/engines/kof_rhs518/notch5.wav",
+    "zexciv_stuff/engines/kof_rhs518/notch6.wav",
+    "",
+    ""
+)
+
+TransitionPath = "zexciv_stuff/engines/kof_rhs518/transitions/"
+#---------------------0-1,1-2,2-3,3-4,4-5,5-6,6-7,7-8
+EngineBehavior = array(1,  1,  1,  1,  1,  1,  3,  3)
+#0 - A/B Notching
+#1 - Full Sweep
+#2 - Instant Change
+#3 - No Change
+                 #1-2  2-3  3-4  4-5  5-6  6-7  7-8 
+UpDelays = array(5212,5257,4447,7152,1657,0,0)
+                  #8-7  7-6  6-5  5-4  4-3  3-2  2-1
+DownDelays = array(0,0,2197,3437,2707,3822,4620)
+
+UpOverrides = array(
+    "", #0-1
+    "", #1-2
+    "", #2-3
+    "", #3-4
+    "", #4-5
+    "", #5-6
+    "", #6-7
+    ""  #7-8
+)
+
+DownOverrides = array(
+    "", #8-7
+    "", #7-6
+    "", #6-5
+    "", #5-4
+    "", #4-3
+    "", #3-2
+    "", #2-1
+    ""  #1-0
+)
+
+StartupClagDelay = 0.1 #Time required to hold starter for engine to turn on successfully
+StartupClagDuration = 0.2 #Duration for starter smoke
+
+CompressorType = 1 #0 for Shaft-driven, 1 for Electrical
+
+CompressorOn = "lazpack/misc/compressors/gardner-denver_wbo_u36b/loop.wav"
+CompressorOff = "lazpack/misc/compressors/gardner-denver_wbo_u36b/end.wav"
+
+DynamicsOn = "lazpack/misc/ge_radfan_universal_late_loop.wav"
+DynamicsOff = "lazpack/misc/ge_radfan_universal_late_end.wav"
+
+PrimeOn = "floofys_sound_pack/aviation/other_alarms/boeing_overspeed_alarm.wav"
+PrimeOff = ""
+
+PrimerDuration = randint(10,15)
+
+SoundDurations = table()
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/up/0-1.wav",number] = 2360
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/up/1-2.wav",number] = 5215
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/up/2-3.wav",number] = 5260
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/up/3-4.wav",number] = 4450
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/up/4-5.wav",number] = 7155
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/up/5-6.wav",number] = 1660
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/down/1-0.wav",number] = 2800
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/down/2-1.wav",number] = 4622
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/down/3-2.wav",number] = 3825
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/down/4-3.wav",number] = 2710
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/down/5-4.wav",number] = 3440
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/down/6-5.wav",number] = 2200
+SoundDurations["zexciv_stuff/engines/kof_rhs518/startup.wav",number] = 1700
+SoundDurations["zexciv_stuff/engines/kof_rhs518/shutdown.wav",number] = 4200
