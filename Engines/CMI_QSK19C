@@ -1,0 +1,97 @@
+@name ptgamma/engines/CMI_QSK19C
+#ENGINE CONFIG
+ENG_Version = "2.0.67"
+#For use in NRE Gensets. Also works as a fill-in for the QSK19R and QSK19L.
+EngineType = "Cummins QSK19C" #What is the name of the Prime Mover?
+
+Startup_Hi = "wam98_sounds/trains/engines/cmiqsk19/startup.wav" #Startup Sound to put the engine in High (Normal) Idle.
+Startup_Lo = "" #Startup Sound to put the engine in Low Idle.
+Startup_Mode = 1 #0 for Low, 1 for High
+
+Shutdown_Hi = "wam98_sounds/trains/engines/cmiqsk19/shutdown.wav" #Shutdown Sound from High Idle.
+Shutdown_Lo = "" #Shutdown Sound from Low Idle.
+Shutdown_Mode = 1 #0 for Low, 1 for High, 2 for Both as the situation demands it
+
+FuelSaverMode = 0 #If set to 1, the locomotive will go into and out of Low Idle as the reverser is moved in and out of Neutral
+FuelSaverDelay = 0 #Time, in seconds, for engine to fall into Low Idle, if used.
+
+TransitionToLow = "" #Transition sound for High to Low idle, if used.
+TransitionToHigh = "" #Transition sound for Low to High idle, if used.
+Idle_Low = "" #Sound for Low Idle, if used.
+
+NumEngineNotches = 8 #Number of Engine Notches, not counting idle.
+
+Notches = array(
+    "wam98_sounds/trains/engines/cmiqsk19/idle.wav",
+    "wam98_sounds/trains/engines/cmiqsk19/notch1.wav",
+    "wam98_sounds/trains/engines/cmiqsk19/notch2.wav",
+    "wam98_sounds/trains/engines/cmiqsk19/notch3.wav",
+    "wam98_sounds/trains/engines/cmiqsk19/notch4.wav",
+    "wam98_sounds/trains/engines/cmiqsk19/notch4.wav",
+    "wam98_sounds/trains/engines/cmiqsk19/notch4.wav",
+    "wam98_sounds/trains/engines/cmiqsk19/notch4.wav",
+    "wam98_sounds/trains/engines/cmiqsk19/notch4.wav"
+)
+    
+TransitionPath = "wam98_sounds/trains/engines/cmiqsk19/transitions/"
+#----------------------0-1,1-2,2-3,3-4 4-5 5-6 6-7 7-8
+EngineBehavior = array(1,  1,  1,  1,  3,  3,  3,  3  )
+#0 - A/B Notching
+#1 - Full Sweep
+#2 - Instant Change
+#3 - No Change
+#4 - Override (Full Sweep)
+                #0-1  1-2  2-3 3-4  4-5 5-6 6-7 7-8
+UpDelays = array(1891,1294,830,3255,0,  0,  0,  0  )
+                  #8-7 7-6 6-5 5-4 4-3 3-2 2-1  1-0
+DownDelays = array(0,  0,  0,  0,  762,493,1595,1006)
+
+UpOverrides = array(
+    "", #0-1
+    "", #1-2
+    "", #2-3
+    "", #3-4
+    "", #4-5
+    "", #5-6
+    "", #6-7
+    ""  #7-8
+)
+
+DownOverrides = array(
+    "", #8-7
+    "", #7-6
+    "", #6-5
+    "", #5-4
+    "", #4-3
+    "", #3-2
+    "", #2-1
+    ""  #1-0
+)
+
+StartupClagDelay = 1 #Time required to hold starter for engine to turn on successfully
+StartupClagDuration = 1 #Duration for starter smoke
+
+CompressorType = 1 #0 for Shaft-driven, 1 for Electrical
+
+CompressorOn = "kei/trains/compressors/siemens_charger_compressor_1_loop.wav"
+CompressorOff = "kei/trains/compressors/siemens_charger_compressor_1_end.wav"
+
+DynamicsOn = ""
+DynamicsOff = ""
+
+PrimeOn = "kei/trains/engines/maybach_md_870/primer_loop.wav"
+PrimeOff = "kei/trains/engines/maybach_md_870/primer_end.wav"
+
+PrimerDuration = randint(1,4)
+
+SoundDurations = table()
+SoundDurations["wam98_sounds/trains/engines/cmiqsk19/transitions/up/0-1.wav",number] = 1890
+SoundDurations["wam98_sounds/trains/engines/cmiqsk19/transitions/up/1-2.wav",number] = 1290
+SoundDurations["wam98_sounds/trains/engines/cmiqsk19/transitions/up/2-3.wav",number] = 830
+SoundDurations["wam98_sounds/trains/engines/cmiqsk19/transitions/up/3-4.wav",number] = 3250
+SoundDurations["wam98_sounds/trains/engines/cmiqsk19/transitions/down/1-0.wav",number] = 1000
+SoundDurations["wam98_sounds/trains/engines/cmiqsk19/transitions/down/2-1.wav",number] = 1590
+SoundDurations["wam98_sounds/trains/engines/cmiqsk19/transitions/down/3-2.wav",number] = 490
+SoundDurations["wam98_sounds/trains/engines/cmiqsk19/transitions/down/4-3.wav",number] = 760
+SoundDurations["wam98_sounds/trains/engines/cmiqsk19/startup.wav",number] = 6780
+SoundDurations["wam98_sounds/trains/engines/cmiqsk19/shutdown.wav",number] = 13390
