@@ -42,9 +42,9 @@ EngineBehavior = array(1,  1,  1,  1,  1,  1,  3,  3)
 #2 - Instant Change
 #3 - No Change
                  #1-2  2-3  3-4  4-5  5-6  6-7  7-8 
-UpDelays = array(5212,5257,4447,7152,1657,0,0)
+UpDelays = array(5160,5276,4512,7212,1739,0,0)
                   #8-7  7-6  6-5  5-4  4-3  3-2  2-1
-DownDelays = array(0,0,2197,3437,2707,3822,4620)
+DownDelays = array(0,0,2197,3334,2689,3783,4624)
 
 UpOverrides = array(
     "", #0-1
@@ -79,23 +79,23 @@ CompressorOff = "lazpack/misc/compressors/gardner-denver_wbo_u36b/end.wav"
 DynamicsOn = "lazpack/misc/ge_radfan_universal_late_loop.wav"
 DynamicsOff = "lazpack/misc/ge_radfan_universal_late_end.wav"
 
-PrimeOn = "floofys_sound_pack/aviation/other_alarms/boeing_overspeed_alarm.wav"
+PrimeOn = ""
 PrimeOff = ""
 
-PrimerDuration = randint(10,15)
+PrimerDuration = 0
 
 SoundDurations = table()
-SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/up/0-1.wav",number] = 2360
-SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/up/1-2.wav",number] = 5215
-SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/up/2-3.wav",number] = 5260
-SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/up/3-4.wav",number] = 4450
-SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/up/4-5.wav",number] = 7155
-SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/up/5-6.wav",number] = 1660
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/up/0-1.wav",number] = 2327
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/up/1-2.wav",number] = 5160
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/up/2-3.wav",number] = 5276
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/up/3-4.wav",number] = 4512
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/up/4-5.wav",number] = 7212
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/up/5-6.wav",number] = 1739
 SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/down/1-0.wav",number] = 2800
-SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/down/2-1.wav",number] = 4622
-SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/down/3-2.wav",number] = 3825
-SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/down/4-3.wav",number] = 2710
-SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/down/5-4.wav",number] = 3440
-SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/down/6-5.wav",number] = 2200
-SoundDurations["zexciv_stuff/engines/kof_rhs518/startup.wav",number] = 1700
-SoundDurations["zexciv_stuff/engines/kof_rhs518/shutdown.wav",number] = 4200
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/down/2-1.wav",number] = 4624
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/down/3-2.wav",number] = 3783
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/down/4-3.wav",number] = 2689
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/down/5-4.wav",number] = 3334
+SoundDurations["zexciv_stuff/engines/kof_rhs518/transitions/down/6-5.wav",number] = 2197
+SoundDurations["zexciv_stuff/engines/kof_rhs518/startup.wav",number] = 1771
+SoundDurations["zexciv_stuff/engines/kof_rhs518/shutdown.wav",number] = 4184
