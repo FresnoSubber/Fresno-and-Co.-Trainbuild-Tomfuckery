@@ -1,0 +1,106 @@
+@name ptgamma/engines/winton_8-201a
+#ENGINE CONFIG
+ENG_Version = "2.0.67"
+#For use in VERY early EMD products (SC, SW, NW, NW1, any 1930s era streamliner.) Also works for the V12 used in the Early E Units.
+EngineType = "Winton 8-201A " #What is the name of the Prime Mover?
+
+Startup_Hi = "parkmanpack/winton8-268a/startup.wav" #Startup Sound to put the engine in High (Normal) Idle.
+Startup_Lo = "" #Startup Sound to put the engine in Low Idle.
+Startup_Mode = 1 #0 for Low, 1 for High
+
+Shutdown_Hi = "parkmanpack/winton8-268a/shutdown.wav" #Shutdown Sound from High Idle.
+Shutdown_Lo = "" #Shutdown Sound from Low Idle.
+Shutdown_Mode = 1 #0 for Low, 1 for High, 2 for Both as the situation demands it
+
+FuelSaverMode = 0 #If set to 1, the locomotive will go into and out of Low Idle as the reverser is moved in and out of Neutral
+FuelSaverDelay = 0 #Time, in seconds, for engine to fall into Low Idle, if used.
+
+TransitionToLow = "" #Transition sound for High to Low idle, if used.
+TransitionToHigh = "" #Transition sound for Low to High idle, if used.
+Idle_Low = "" #Sound for Low Idle, if used.
+
+NumEngineNotches = 8 #Number of Engine Notches, not counting idle.
+
+Notches = array(
+    "parkmanpack/winton8-268a/idle.wav", #Idle
+    "parkmanpack/winton8-268a/1.wav", #Notch 1
+    "parkmanpack/winton8-268a/2.wav", #Notch 2
+    "parkmanpack/winton8-268a/3.wav", #Notch 3
+    "parkmanpack/winton8-268a/4.wav", #And so On
+    "parkmanpack/winton8-268a/5.wav",
+    "parkmanpack/winton8-268a/6.wav",
+    "parkmanpack/winton8-268a/7.wav",
+    "parkmanpack/winton8-268a/8.wav"
+)
+
+TransitionPath = "parkmanpack/winton8-268a/transitions/"
+#---------------------0-1,1-2,2-3,3-4,4-5,5-6,6-7,7-8
+EngineBehavior = array(1,  1,  1,  1,  1,  1,  1,  1)
+#0 - A/B Notching
+#1 - Full Sweep
+#2 - Instant Change
+#3 - No Change
+#4 - Override (Full Sweep)
+                #0-1  1-2  2-3  3-4  4-5  5-6  6-7  7-8 
+UpDelays = array(1300,1155,1300,1300,1300,1300,1300,1300)
+                  #8-7  7-6  6-5  5-4  4-3  3-2  1-2   1-0
+DownDelays = array(1300,1300,1300,1300,1300,1300,1155,1300)
+
+UpOverrides = array(
+    "", #0-1
+    "", #1-2
+    "", #2-3
+    "", #3-4
+    "", #4-5
+    "", #5-6
+    "", #6-7
+    ""  #7-8
+)
+
+DownOverrides = array(
+    "", #8-7
+    "", #7-6
+    "", #6-5
+    "", #5-4
+    "", #4-3
+    "", #3-2
+    "", #2-1
+    ""  #1-0
+)
+
+StartupClagDelay = 2 #Time required to hold starter for engine to turn on successfully
+StartupClagDuration = 2 #Duration for starter smoke
+
+CompressorType = 1 #0 for Shaft-driven, 1 for Electrical
+
+CompressorOn = "gsgtrainsounds/misc/compressors/gd_wxe_567/gd_wxe_loop.wav"
+CompressorOff = "gsgtrainsounds/misc/compressors/gd_wxe_567/gd_wxe_end.wav"
+
+DynamicsOn = ""
+DynamicsOff = ""
+
+PrimeOn = "parkmanpack/emd567bv12/prime_loop.wav"
+PrimeOff = "parkmanpack/emd567bv12/prime_end.wav"
+
+PrimerDuration = randint(2,2)
+
+SoundDurations = table()
+SoundDurations = table()
+SoundDurations["parkmanpack/winton8-268a/transitions/up/0-1.wav",number] = 1300
+SoundDurations["parkmanpack/winton8-268a/transitions/up/1-2.wav",number] = 1155
+SoundDurations["parkmanpack/winton8-268a/transitions/up/2-3.wav",number] = 1300
+SoundDurations["parkmanpack/winton8-268a/transitions/up/3-4.wav",number] = 1300
+SoundDurations["parkmanpack/winton8-268a/transitions/up/4-5.wav",number] = 1300
+SoundDurations["parkmanpack/winton8-268a/transitions/up/5-6.wav",number] = 1300
+SoundDurations["parkmanpack/winton8-268a/transitions/up/6-7.wav",number] = 1300
+SoundDurations["parkmanpack/winton8-268a/transitions/up/7-8.wav",number] = 1300
+SoundDurations["parkmanpack/winton8-268a/transitions/down/1-0.wav",number] = 1300
+SoundDurations["parkmanpack/winton8-268a/transitions/down/2-1.wav",number] = 1155
+SoundDurations["parkmanpack/winton8-268a/transitions/down/3-2.wav",number] = 1300
+SoundDurations["parkmanpack/winton8-268a/transitions/down/4-3.wav",number] = 1300
+SoundDurations["parkmanpack/winton8-268a/transitions/down/5-4.wav",number] = 1300
+SoundDurations["parkmanpack/winton8-268a/transitions/down/6-5.wav",number] = 1300
+SoundDurations["parkmanpack/winton8-268a/transitions/down/7-6.wav",number] = 1300
+SoundDurations["parkmanpack/winton8-268a/transitions/down/8-7.wav",number] = 1300
+SoundDurations["parkmanpack/winton8-268a/startup.wav",number] = 16281
+SoundDurations["parkmanpack/winton8-268a/shutdown.wav",number] = 5885
