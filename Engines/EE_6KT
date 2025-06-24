@@ -1,0 +1,121 @@
+@name ptgamma/engines/EE_6KT
+#ENGINE CONFIG
+ENG_Version = "2.0.67"
+#For use in ~350/400hp EE locomotives (Such as BR Classes 08, 09, 11, 12, 13, VR F Class, NS 500 and 600 Classes), also acceptable as a 6RKT substitute.
+EngineType = "English Electric 6KT" #What is the name of the Prime Mover?
+
+Startup_Hi = "kei/trains/engines/ee_6kt/startup.wav" #Startup Sound to put the engine in High (Normal) Idle.
+Startup_Lo = "" #Startup Sound to put the engine in Low Idle.
+Startup_Mode = 1 #0 for Low, 1 for High
+
+Shutdown_Hi = "kei/trains/engines/ee_6kt/shutdown.wav" #Shutdown Sound from High Idle.
+Shutdown_Lo = "" #Shutdown Sound from Low Idle.
+Shutdown_Mode = 1 #0 for Low, 1 for High, 2 for Both as the situation demands it
+
+FuelSaverMode = 0 #If set to 1, the locomotive will go into and out of Low Idle as the reverser is moved in and out of Neutral
+FuelSaverDelay = 0 #Time, in seconds, for engine to fall into Low Idle, if used.
+
+TransitionToLow = "" #Transition sound for High to Low idle, if used.
+TransitionToHigh = "" #Transition sound for Low to High idle, if used.
+Idle_Low = "" #Sound for Low Idle, if used.
+
+NumEngineNotches = 4 #Number of Engine Notches, not counting idle.
+
+Notches = array(
+    "kei/trains/engines/ee_6kt/idle.wav",
+    "kei/trains/engines/ee_6kt/notch1.wav",
+    "kei/trains/engines/ee_6kt/notch2.wav",
+    "kei/trains/engines/ee_6kt/notch3.wav",
+    "kei/trains/engines/ee_6kt/notch4.wav",
+    "kei/trains/engines/ee_6kt/notch5.wav",
+    "kei/trains/engines/ee_6kt/notch6.wav",
+    "kei/trains/engines/ee_6kt/notch7.wav",
+    "kei/trains/engines/ee_6kt/notch8.wav"
+)
+    
+TransitionPath = "kei/trains/engines/ee_6kt/transitions/"
+#----------------------0-1,1-2,2-3,3-4,4-5,5-6,6-7,7-8
+EngineBehavior = array(1,  0,  0,  0,  0,  0,  0,  0)
+#0 - A/B Notching
+#1 - Full Sweep
+#2 - Instant Change
+#3 - No Change
+#4 - Override (Full Sweep)
+                #0-1  1-2  2-3  3-4  4-5 5-6 6-7 7-8 
+UpDelays = array(0,   0,   0,   0,   0,  0,  0,  0)
+                  #8-7 7-6  6-5 5-4 4-3  3-2  2-1
+DownDelays = array(0,  0,   0,  0,  0,   0,   0,  0)
+
+UpOverrides = array(
+    "", #0-1
+    "", #1-2
+    "", #2-3
+    "", #3-4
+    "", #4-5
+    "", #5-6
+    "", #6-7
+    ""  #7-8
+)
+
+DownOverrides = array(
+    "", #8-7
+    "", #7-6
+    "", #6-5
+    "", #5-4
+    "", #4-3
+    "", #3-2
+    "", #2-1
+    ""  #1-0
+)
+
+StartupClagDelay = 5 #Time required to hold starter for engine to turn on successfully
+StartupClagDuration = 0.75 #Duration for starter smoke
+
+CompressorType = 0 #0 for Shaft-driven, 1 for Electrical
+
+CompressorOn = "gsgtrainsounds/misc/compressors/gd_wbo_dash7_loop.wav"
+CompressorOff = "gsgtrainsounds/misc/compressors/gd_wbo_dash7_end.wav"
+
+DynamicsOn = "wam98_sounds/trains/misc/ee_dyn_loop.wav"
+DynamicsOff = "wam98_sounds/trains/misc/ee_dyn_end.wav"
+
+PrimeOn = "kei/trains/engines/ee_6kt/primer_loop.wav"
+PrimeOff = "kei/trains/engines/ee_6kt/primer_end.wav"
+
+PrimerDuration = randint(5,15)
+
+SoundDurations = table()
+SoundDurations["kei/trains/engines/ee_6kt/transitions/up/0-1a.wav",number] = 660
+SoundDurations["kei/trains/engines/ee_6kt/transitions/up/0-1b.wav",number] = 2677
+SoundDurations["kei/trains/engines/ee_6kt/transitions/up/1-2a.wav",number] = 924
+SoundDurations["kei/trains/engines/ee_6kt/transitions/up/1-2b.wav",number] = 1747
+SoundDurations["kei/trains/engines/ee_6kt/transitions/up/2-3a.wav",number] = 925
+SoundDurations["kei/trains/engines/ee_6kt/transitions/up/2-3b.wav",number] = 1398
+SoundDurations["kei/trains/engines/ee_6kt/transitions/up/3-4a.wav",number] = 569
+SoundDurations["kei/trains/engines/ee_6kt/transitions/up/3-4b.wav",number] = 1711
+SoundDurations["kei/trains/engines/ee_6kt/transitions/up/4-5a.wav",number] = 732
+SoundDurations["kei/trains/engines/ee_6kt/transitions/up/4-5b.wav",number] = 1687
+SoundDurations["kei/trains/engines/ee_6kt/transitions/up/5-6a.wav",number] = 777
+SoundDurations["kei/trains/engines/ee_6kt/transitions/up/5-6b.wav",number] = 1579
+SoundDurations["kei/trains/engines/ee_6kt/transitions/up/6-7a.wav",number] = 617
+SoundDurations["kei/trains/engines/ee_6kt/transitions/up/6-7b.wav",number] = 1337
+SoundDurations["kei/trains/engines/ee_6kt/transitions/up/7-8a.wav",number] = 650
+SoundDurations["kei/trains/engines/ee_6kt/transitions/up/7-8b.wav",number] = 518
+SoundDurations["kei/trains/engines/ee_6kt/transitions/down/1-0a.wav",number] = 1055
+SoundDurations["kei/trains/engines/ee_6kt/transitions/down/1-0b.wav",number] = 1144
+SoundDurations["kei/trains/engines/ee_6kt/transitions/down/2-1a.wav",number] = 963
+SoundDurations["kei/trains/engines/ee_6kt/transitions/down/2-1b.wav",number] = 1473
+SoundDurations["kei/trains/engines/ee_6kt/transitions/down/3-2a.wav",number] = 1118
+SoundDurations["kei/trains/engines/ee_6kt/transitions/down/3-2b.wav",number] = 1323
+SoundDurations["kei/trains/engines/ee_6kt/transitions/down/4-3a.wav",number] = 873
+SoundDurations["kei/trains/engines/ee_6kt/transitions/down/4-3b.wav",number] = 1631
+SoundDurations["kei/trains/engines/ee_6kt/transitions/down/5-4a.wav",number] = 910
+SoundDurations["kei/trains/engines/ee_6kt/transitions/down/5-4b.wav",number] = 1432
+SoundDurations["kei/trains/engines/ee_6kt/transitions/down/6-5a.wav",number] = 632
+SoundDurations["kei/trains/engines/ee_6kt/transitions/down/6-5b.wav",number] = 1144
+SoundDurations["kei/trains/engines/ee_6kt/transitions/down/7-6a.wav",number] = 744
+SoundDurations["kei/trains/engines/ee_6kt/transitions/down/7-6b.wav",number] = 1036
+SoundDurations["kei/trains/engines/ee_6kt/transitions/down/8-7a.wav",number] = 417
+SoundDurations["kei/trains/engines/ee_6kt/transitions/down/8-7b.wav",number] = 849
+SoundDurations["kei/trains/engines/ee_6kt/startup.wav",number] = 10622
+SoundDurations["kei/trains/engines/ee_6kt/shutdown.wav",number] = 8462
