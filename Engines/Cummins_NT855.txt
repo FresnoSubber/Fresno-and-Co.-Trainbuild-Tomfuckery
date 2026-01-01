@@ -67,7 +67,7 @@ DownOverrides = array(
     ""  #1-0
 )
 
-StartupClagDelay = 8.5 #Time required to hold starter for engine to turn on successfully
+StartupClagDelay = 2 #Time required to hold starter for engine to turn on successfully
 StartupClagDuration = 2 #Duration for starter smoke
 
 CompressorType = 0 #0 for Shaft-driven, 1 for Electrical
