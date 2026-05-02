@@ -1,0 +1,119 @@
+@name ptgamma/engines/CAT_C175-16
+#ENGINE CONFIG
+ENG_Version = "2.0.67"
+#For use in the PR43C. Also works as a good C175-20 Fill-In
+EngineType = "CAT C175-16" #What is the name of the Prime Mover?
+
+Startup_Hi = "priority's sounds/griggs/cat_c175_v16/startup.wav" #Startup Sound to put the engine in High (Normal) Idle.
+Startup_Lo = "" #Startup Sound to put the engine in Low Idle.
+Startup_Mode = 1 #0 for Low, 1 for High
+
+Shutdown_Hi = "priority's sounds/griggs/cat_c175_v16/shutdown.wav" #Shutdown Sound from High Idle.
+Shutdown_Lo = "" #Shutdown Sound from Low Idle.
+Shutdown_Mode = 1 #0 for Low, 1 for High, 2 for Both as the situation demands it
+
+FuelSaverMode = 0 #If set to 1, the locomotive will go into and out of Low Idle as the reverser is moved in and out of Neutral
+FuelSaverDelay = 0 #Time, in seconds, for engine to fall into Low Idle, if used.
+
+TransitionToLow = "" #Transition sound for High to Low idle, if used.
+TransitionToHigh = "" #Transition sound for Low to High idle, if used.
+Idle_Low = "" #Sound for Low Idle, if used.
+
+NumEngineNotches = 8 #Number of Engine Notches, not counting idle.
+
+Notches = array(
+    "priority's sounds/griggs/cat_c175_v16/idle_notch1.wav", #Idle
+    "priority's sounds/griggs/cat_c175_v16/idle_notch1.wav", #Notch 1
+    "priority's sounds/griggs/cat_c175_v16/notch2.wav", #Notch 2
+    "priority's sounds/griggs/cat_c175_v16/notch3.wav", #Notch 3
+    "priority's sounds/griggs/cat_c175_v16/notch4.wav", #And so On
+    "priority's sounds/griggs/cat_c175_v16/notch5.wav",
+    "priority's sounds/griggs/cat_c175_v16/notch6.wav",
+    "priority's sounds/griggs/cat_c175_v16/notch7.wav",
+    "priority's sounds/griggs/cat_c175_v16/notch8.wav"
+)
+
+TransitionPath = "priority's sounds/griggs/cat_c175_v16/transitions/"
+#---------------------0-1,1-2,2-3,3-4,4-5,5-6,6-7,7-8
+EngineBehavior = array(1,  1,  1,  1,  1,  1,  1,  1)
+#0 - A/B Notching
+#1 - Full Sweep
+#2 - Instant Change
+#3 - No Change
+#4 - Override (Full Sweep)
+                #0-1  1-2  2-3  3-4  4-5  5-6  6-7  7-8 
+UpDelays = array(0,0,0,0,0,0,0,0)
+                  #8-7  7-6  6-5  5-4  4-3  3-2  1-2   1-0
+DownDelays = array(0,0,0,0,0,0,0,0)
+
+UpOverrides = array(
+    "", #0-1
+    "", #1-2
+    "", #2-3
+    "", #3-4
+    "", #4-5
+    "", #5-6
+    "", #6-7
+    ""  #7-8
+)
+
+DownOverrides = array(
+    "", #8-7
+    "", #7-6
+    "", #6-5
+    "", #5-4
+    "", #4-3
+    "", #3-2
+    "", #2-1
+    ""  #1-0
+)
+
+StartupClagDelay = 3 #Time required to hold starter for engine to turn on successfully
+StartupClagDuration = 5 #Duration for starter smoke
+
+CompressorType = 1 #0 for Shaft-driven, 1 for Electrical
+
+CompressorOn = "gsgtrainsounds/misc/compressors/gardner-denver_wla-sc_sd9043mac/loop.wav"
+CompressorOff = "gsgtrainsounds/misc/compressors/gardner-denver_wla-sc_sd9043mac/end.wav"
+
+DynamicsOn = "gsgtrainsounds/misc/emd_dyn_sd70_loop.wav"
+DynamicsOff = "gsgtrainsounds/misc/emd_dyn_sd70_end.wav"
+
+PrimeOn = "710s_sound_pack/trains/engines/ge7fdl16ae/prime_loop.wav"
+PrimeOff = "710s_sound_pack/trains/engines/ge7fdl16ae/prime_end.wav"
+
+
+PrimerDuration = randint(10,15)
+
+SoundDurations = table()
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/up/0-1a.wav",number] = 190
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/up/0-1b.wav",number] = 2160
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/up/1-2a.wav",number] = 810
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/up/1-2b.wav",number] = 2640
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/up/2-3a.wav",number] = 800
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/up/2-3b.wav",number] = 2410
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/up/3-4a.wav",number] = 810
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/up/3-4b.wav",number] = 2690
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/up/4-5a.wav",number] = 800
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/up/4-5b.wav",number] = 2320
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/up/5-6a.wav",number] = 800
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/up/5-6b.wav",number] = 2140
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/up/6-7a.wav",number] = 800
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/up/6-7b.wav",number] = 2900
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/down/1-0a.wav",number] = 660
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/down/1-0b.wav",number] = 2550
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/down/2-1a.wav",number] = 610
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/down/2-1b.wav",number] = 1070
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/down/3-2a.wav",number] = 580
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/down/3-2b.wav",number] = 940
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/down/4-3a.wav",number] = 510
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/down/4-3b.wav",number] = 950
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/down/5-4a.wav",number] = 540
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/down/5-4b.wav",number] = 870
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/down/6-5a.wav",number] = 800
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/down/6-5b.wav",number] = 1080
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/down/7-6a.wav",number] = 460
+SoundDurations["zexciv_stuff/engines/cummins_nt855/transitions/down/7-6b.wav",number] = 1150
+SoundDurations["zexciv_stuff/engines/cummins_nt855/startup.wav",number] = 5620
+SoundDurations["zexciv_stuff/engines/cummins_nt855/shutdown.wav",number] = 4610
+
